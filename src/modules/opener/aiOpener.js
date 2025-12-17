@@ -35,7 +35,7 @@ api.mapkey("oas", "Open deepseek", function () {
   if (window.location.hostname.includes("deepseek")) {
     window.location.href = "https://chat.deepseek.com";
   } else {
-    window.open("https://chat.deepseek.com/", "_blank");
+    window.open("https:x//chat.deepseek.com/", "_blank");
   }
 });
 

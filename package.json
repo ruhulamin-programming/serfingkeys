@@ -1,6 +1,6 @@
 {
   "scripts": {
-    "build": "bun run esbuild surfingkeys.js --bundle --outfile=surfingkeys.bundle.js --format=iife"
+    "build": "esbuild surfingkeys.js --bundle --outfile=surfingkeys.bundle.js --format=iife"
   },
   "dependencies": {
     "dayjs": "^1.11.18",

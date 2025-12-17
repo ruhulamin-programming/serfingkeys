@@ -137,13 +137,13 @@ api.mapkey(
       api.Front.showBanner("Not a repo URL");
     }
   },
-  { domain: /./, prefix: " " },
+  { domain: /./, prefix: " " }
 );
 //w: 3╰───────────── Block End ─────────────╯
 //w: 5╭──────────── Block Start ────────────╮
 api.mapkey("grp", "👤 Go to GitHub user profile from repo page", function () {
   const match = window.location.href.match(
-    /^https:\/\/github\.com\/([^\/?#]+)/,
+    /^https:\/\/github\.com\/([^\/?#]+)/
   );
   if (match && match[1]) {
     const user = match[1];
@@ -166,8 +166,9 @@ api.mapkey(
   "👤 Go to GitHub user profile or repositories tab",
   function () {
     const currentUrl = window.location.href;
-    const staticProfile = "https://github.com/shahjalal-labs";
-    const yourReposTab = "https://github.com/shahjalal-labs?tab=repositories";
+    const staticProfile = "https://github.com/ruhulamin-programming";
+    const yourReposTab =
+      "https://github.com/ruhulamin-programming?tab=repositories";
 
     if (!currentUrl.startsWith("https://github.com/")) {
       // 🌐 Not on GitHub
@@ -201,7 +202,7 @@ api.mapkey(
       // 📁 On repo or subpath — redirect to the user's profile
       window.location.href = `https://github.com/${currentUser}`;
     }
-  },
+  }
 );
 
 //w: 5╰───────────── Block End ─────────────╯

@@ -28,9 +28,9 @@
   // node_modules/dayjs/dayjs.min.js
   var require_dayjs_min = __commonJS({
     "node_modules/dayjs/dayjs.min.js"(exports, module) {
-      !function(t, e) {
+      !(function(t, e) {
         "object" == typeof exports && "undefined" != typeof module ? module.exports = e() : "function" == typeof define && define.amd ? define(e) : (t = "undefined" != typeof globalThis ? globalThis : t || self).dayjs = e();
-      }(exports, function() {
+      })(exports, (function() {
         "use strict";
         var t = 1e3, e = 6e4, n = 36e5, r = "millisecond", i = "second", s = "minute", u = "hour", a = "day", o = "week", c = "month", f = "quarter", h = "year", d = "date", l = "Invalid Date", $ = /^(\d{4})[-/]?(\d{1,2})?[-/]?(\d{0,2})[Tt\s]*(\d{1,2})?:?(\d{1,2})?:?(\d{1,2})?[.:]?(\d+)?$/, y = /\[([^\]]+)]|Y{1,4}|M{1,4}|D{1,2}|d{1,4}|H{1,2}|h{1,2}|a|A|m{1,2}|s{1,2}|Z{1,2}|SSS/g, M = { name: "en", weekdays: "Sunday_Monday_Tuesday_Wednesday_Thursday_Friday_Saturday".split("_"), months: "January_February_March_April_May_June_July_August_September_October_November_December".split("_"), ordinal: function(t2) {
           var e2 = ["th", "st", "nd", "rd"], n2 = t2 % 100;
@@ -76,13 +76,13 @@
         b.l = w, b.i = S, b.w = function(t2, e2) {
           return O(t2, { locale: e2.$L, utc: e2.$u, x: e2.$x, $offset: e2.$offset });
         };
-        var _ = function() {
+        var _ = (function() {
           function M2(t2) {
             this.$L = w(t2.locale, null, true), this.parse(t2), this.$x = this.$x || t2.x || {}, this[p] = true;
           }
           var m2 = M2.prototype;
           return m2.parse = function(t2) {
-            this.$d = function(t3) {
+            this.$d = (function(t3) {
               var e2 = t3.date, n2 = t3.utc;
               if (null === e2) return /* @__PURE__ */ new Date(NaN);
               if (b.u(e2)) return /* @__PURE__ */ new Date();
@@ -95,7 +95,7 @@
                 }
               }
               return new Date(e2);
-            }(t2), this.init();
+            })(t2), this.init();
           }, m2.init = function() {
             var t2 = this.$d;
             this.$y = t2.getFullYear(), this.$M = t2.getMonth(), this.$D = t2.getDate(), this.$W = t2.getDay(), this.$H = t2.getHours(), this.$m = t2.getMinutes(), this.$s = t2.getSeconds(), this.$ms = t2.getMilliseconds();
@@ -182,8 +182,8 @@
               var r3 = t3 < 12 ? "AM" : "PM";
               return n3 ? r3.toLowerCase() : r3;
             };
-            return r2.replace(y, function(t3, r3) {
-              return r3 || function(t4) {
+            return r2.replace(y, (function(t3, r3) {
+              return r3 || (function(t4) {
                 switch (t4) {
                   case "YY":
                     return String(e2.$y).slice(-2);
@@ -235,8 +235,8 @@
                     return i2;
                 }
                 return null;
-              }(t3) || i2.replace(":", "");
-            });
+              })(t3) || i2.replace(":", "");
+            }));
           }, m2.utcOffset = function() {
             return 15 * -Math.round(this.$d.getTimezoneOffset() / 15);
           }, m2.diff = function(r2, d2, l2) {
@@ -291,17 +291,17 @@
           }, m2.toString = function() {
             return this.$d.toUTCString();
           }, M2;
-        }(), k = _.prototype;
-        return O.prototype = k, [["$ms", r], ["$s", i], ["$m", s], ["$H", u], ["$W", a], ["$M", c], ["$y", h], ["$D", d]].forEach(function(t2) {
+        })(), k = _.prototype;
+        return O.prototype = k, [["$ms", r], ["$s", i], ["$m", s], ["$H", u], ["$W", a], ["$M", c], ["$y", h], ["$D", d]].forEach((function(t2) {
           k[t2[1]] = function(e2) {
             return this.$g(e2, t2[0], t2[1]);
           };
-        }), O.extend = function(t2, e2) {
+        })), O.extend = function(t2, e2) {
           return t2.$i || (t2(e2, _, O), t2.$i = true), O;
         }, O.locale = w, O.isDayjs = S, O.unix = function(t2) {
           return O(1e3 * t2);
         }, O.en = D[g], O.Ls = D, O.p = {}, O;
-      });
+      }));
     }
   });
 
@@ -1287,7 +1287,7 @@
     }
     return mask;
   }
-  var stripDiacritics = String.prototype.normalize ? (str) => str.normalize("NFD").replace(/[\u0300-\u036F\u0483-\u0489\u0591-\u05BD\u05BF\u05C1\u05C2\u05C4\u05C5\u05C7\u0610-\u061A\u064B-\u065F\u0670\u06D6-\u06DC\u06DF-\u06E4\u06E7\u06E8\u06EA-\u06ED\u0711\u0730-\u074A\u07A6-\u07B0\u07EB-\u07F3\u07FD\u0816-\u0819\u081B-\u0823\u0825-\u0827\u0829-\u082D\u0859-\u085B\u08D3-\u08E1\u08E3-\u0903\u093A-\u093C\u093E-\u094F\u0951-\u0957\u0962\u0963\u0981-\u0983\u09BC\u09BE-\u09C4\u09C7\u09C8\u09CB-\u09CD\u09D7\u09E2\u09E3\u09FE\u0A01-\u0A03\u0A3C\u0A3E-\u0A42\u0A47\u0A48\u0A4B-\u0A4D\u0A51\u0A70\u0A71\u0A75\u0A81-\u0A83\u0ABC\u0ABE-\u0AC5\u0AC7-\u0AC9\u0ACB-\u0ACD\u0AE2\u0AE3\u0AFA-\u0AFF\u0B01-\u0B03\u0B3C\u0B3E-\u0B44\u0B47\u0B48\u0B4B-\u0B4D\u0B56\u0B57\u0B62\u0B63\u0B82\u0BBE-\u0BC2\u0BC6-\u0BC8\u0BCA-\u0BCD\u0BD7\u0C00-\u0C04\u0C3E-\u0C44\u0C46-\u0C48\u0C4A-\u0C4D\u0C55\u0C56\u0C62\u0C63\u0C81-\u0C83\u0CBC\u0CBE-\u0CC4\u0CC6-\u0CC8\u0CCA-\u0CCD\u0CD5\u0CD6\u0CE2\u0CE3\u0D00-\u0D03\u0D3B\u0D3C\u0D3E-\u0D44\u0D46-\u0D48\u0D4A-\u0D4D\u0D57\u0D62\u0D63\u0D82\u0D83\u0DCA\u0DCF-\u0DD4\u0DD6\u0DD8-\u0DDF\u0DF2\u0DF3\u0E31\u0E34-\u0E3A\u0E47-\u0E4E\u0EB1\u0EB4-\u0EB9\u0EBB\u0EBC\u0EC8-\u0ECD\u0F18\u0F19\u0F35\u0F37\u0F39\u0F3E\u0F3F\u0F71-\u0F84\u0F86\u0F87\u0F8D-\u0F97\u0F99-\u0FBC\u0FC6\u102B-\u103E\u1056-\u1059\u105E-\u1060\u1062-\u1064\u1067-\u106D\u1071-\u1074\u1082-\u108D\u108F\u109A-\u109D\u135D-\u135F\u1712-\u1714\u1732-\u1734\u1752\u1753\u1772\u1773\u17B4-\u17D3\u17DD\u180B-\u180D\u1885\u1886\u18A9\u1920-\u192B\u1930-\u193B\u1A17-\u1A1B\u1A55-\u1A5E\u1A60-\u1A7C\u1A7F\u1AB0-\u1ABE\u1B00-\u1B04\u1B34-\u1B44\u1B6B-\u1B73\u1B80-\u1B82\u1BA1-\u1BAD\u1BE6-\u1BF3\u1C24-\u1C37\u1CD0-\u1CD2\u1CD4-\u1CE8\u1CED\u1CF2-\u1CF4\u1CF7-\u1CF9\u1DC0-\u1DF9\u1DFB-\u1DFF\u20D0-\u20F0\u2CEF-\u2CF1\u2D7F\u2DE0-\u2DFF\u302A-\u302F\u3099\u309A\uA66F-\uA672\uA674-\uA67D\uA69E\uA69F\uA6F0\uA6F1\uA802\uA806\uA80B\uA823-\uA827\uA880\uA881\uA8B4-\uA8C5\uA8E0-\uA8F1\uA8FF\uA926-\uA92D\uA947-\uA953\uA980-\uA983\uA9B3-\uA9C0\uA9E5\uAA29-\uAA36\uAA43\uAA4C\uAA4D\uAA7B-\uAA7D\uAAB0\uAAB2-\uAAB4\uAAB7\uAAB8\uAABE\uAABF\uAAC1\uAAEB-\uAAEF\uAAF5\uAAF6\uABE3-\uABEA\uABEC\uABED\uFB1E\uFE00-\uFE0F\uFE20-\uFE2F]/g, "") : (str) => str;
+  var stripDiacritics = String.prototype.normalize ? ((str) => str.normalize("NFD").replace(/[\u0300-\u036F\u0483-\u0489\u0591-\u05BD\u05BF\u05C1\u05C2\u05C4\u05C5\u05C7\u0610-\u061A\u064B-\u065F\u0670\u06D6-\u06DC\u06DF-\u06E4\u06E7\u06E8\u06EA-\u06ED\u0711\u0730-\u074A\u07A6-\u07B0\u07EB-\u07F3\u07FD\u0816-\u0819\u081B-\u0823\u0825-\u0827\u0829-\u082D\u0859-\u085B\u08D3-\u08E1\u08E3-\u0903\u093A-\u093C\u093E-\u094F\u0951-\u0957\u0962\u0963\u0981-\u0983\u09BC\u09BE-\u09C4\u09C7\u09C8\u09CB-\u09CD\u09D7\u09E2\u09E3\u09FE\u0A01-\u0A03\u0A3C\u0A3E-\u0A42\u0A47\u0A48\u0A4B-\u0A4D\u0A51\u0A70\u0A71\u0A75\u0A81-\u0A83\u0ABC\u0ABE-\u0AC5\u0AC7-\u0AC9\u0ACB-\u0ACD\u0AE2\u0AE3\u0AFA-\u0AFF\u0B01-\u0B03\u0B3C\u0B3E-\u0B44\u0B47\u0B48\u0B4B-\u0B4D\u0B56\u0B57\u0B62\u0B63\u0B82\u0BBE-\u0BC2\u0BC6-\u0BC8\u0BCA-\u0BCD\u0BD7\u0C00-\u0C04\u0C3E-\u0C44\u0C46-\u0C48\u0C4A-\u0C4D\u0C55\u0C56\u0C62\u0C63\u0C81-\u0C83\u0CBC\u0CBE-\u0CC4\u0CC6-\u0CC8\u0CCA-\u0CCD\u0CD5\u0CD6\u0CE2\u0CE3\u0D00-\u0D03\u0D3B\u0D3C\u0D3E-\u0D44\u0D46-\u0D48\u0D4A-\u0D4D\u0D57\u0D62\u0D63\u0D82\u0D83\u0DCA\u0DCF-\u0DD4\u0DD6\u0DD8-\u0DDF\u0DF2\u0DF3\u0E31\u0E34-\u0E3A\u0E47-\u0E4E\u0EB1\u0EB4-\u0EB9\u0EBB\u0EBC\u0EC8-\u0ECD\u0F18\u0F19\u0F35\u0F37\u0F39\u0F3E\u0F3F\u0F71-\u0F84\u0F86\u0F87\u0F8D-\u0F97\u0F99-\u0FBC\u0FC6\u102B-\u103E\u1056-\u1059\u105E-\u1060\u1062-\u1064\u1067-\u106D\u1071-\u1074\u1082-\u108D\u108F\u109A-\u109D\u135D-\u135F\u1712-\u1714\u1732-\u1734\u1752\u1753\u1772\u1773\u17B4-\u17D3\u17DD\u180B-\u180D\u1885\u1886\u18A9\u1920-\u192B\u1930-\u193B\u1A17-\u1A1B\u1A55-\u1A5E\u1A60-\u1A7C\u1A7F\u1AB0-\u1ABE\u1B00-\u1B04\u1B34-\u1B44\u1B6B-\u1B73\u1B80-\u1B82\u1BA1-\u1BAD\u1BE6-\u1BF3\u1C24-\u1C37\u1CD0-\u1CD2\u1CD4-\u1CE8\u1CED\u1CF2-\u1CF4\u1CF7-\u1CF9\u1DC0-\u1DF9\u1DFB-\u1DFF\u20D0-\u20F0\u2CEF-\u2CF1\u2D7F\u2DE0-\u2DFF\u302A-\u302F\u3099\u309A\uA66F-\uA672\uA674-\uA67D\uA69E\uA69F\uA6F0\uA6F1\uA802\uA806\uA80B\uA823-\uA827\uA880\uA881\uA8B4-\uA8C5\uA8E0-\uA8F1\uA8FF\uA926-\uA92D\uA947-\uA953\uA980-\uA983\uA9B3-\uA9C0\uA9E5\uAA29-\uAA36\uAA43\uAA4C\uAA4D\uAA7B-\uAA7D\uAAB0\uAAB2-\uAAB4\uAAB7\uAAB8\uAABE\uAABF\uAAC1\uAAEB-\uAAEF\uAAF5\uAAF6\uABE3-\uABEA\uABEC\uABED\uFB1E\uFE00-\uFE0F\uFE20-\uFE2F]/g, "")) : ((str) => str);
   var BitapSearch = class {
     constructor(pattern, {
       location: location2 = Config.location,
@@ -2727,8 +2727,8 @@
     "\u{1F464} Go to GitHub user profile or repositories tab",
     function() {
       const currentUrl = window.location.href;
-      const staticProfile = "https://github.com/shahjalal-labs";
-      const yourReposTab = "https://github.com/shahjalal-labs?tab=repositories";
+      const staticProfile = "https://github.com/ruhulamin-programming";
+      const yourReposTab = "https://github.com/ruhulamin-programming?tab=repositories";
       if (!currentUrl.startsWith("https://github.com/")) {
         api.tabOpenLink(staticProfile);
         return;
@@ -2773,522 +2773,6 @@
       );
     }
   });
-
-  // src/modules/style/chatgpt.js
-  var { mapkey: mapkey3, Front } = api;
-  function initFaviconReplacement() {
-    let faviconObserver;
-    let customFaviconUrl;
-    function createCustomFavicon() {
-      const canvas = document.createElement("canvas");
-      canvas.width = 32;
-      canvas.height = 32;
-      const ctx = canvas.getContext("2d");
-      ctx.fillStyle = "#561530";
-      ctx.beginPath();
-      ctx.moveTo(16, 4);
-      ctx.lineTo(24, 10);
-      ctx.lineTo(24, 22);
-      ctx.lineTo(16, 28);
-      ctx.lineTo(8, 22);
-      ctx.lineTo(8, 10);
-      ctx.closePath();
-      ctx.fill();
-      ctx.fillStyle = "#ffffff";
-      ctx.font = "bold 10px Arial";
-      ctx.textAlign = "center";
-      ctx.fillText("SJ", 16, 20);
-      return canvas.toDataURL();
-    }
-    function replaceFavicon() {
-      const favicons = document.querySelectorAll('link[rel*="icon"]');
-      customFaviconUrl = customFaviconUrl || createCustomFavicon();
-      favicons.forEach((favicon) => {
-        if (!favicon.hasAttribute("data-original-href")) {
-          favicon.setAttribute("data-original-href", favicon.href);
-        }
-        if (favicon.href !== customFaviconUrl) {
-          favicon.href = customFaviconUrl;
-        }
-      });
-      if (favicons.length === 0) {
-        const newFavicon = document.createElement("link");
-        newFavicon.rel = "icon";
-        newFavicon.type = "image/x-icon";
-        newFavicon.href = customFaviconUrl;
-        document.head.appendChild(newFavicon);
-      }
-    }
-    function setupFaviconObserver() {
-      if (faviconObserver) faviconObserver.disconnect();
-      faviconObserver = new MutationObserver((mutations) => {
-        let faviconChanged = false;
-        mutations.forEach((mutation) => {
-          if (mutation.type === "childList") {
-            mutation.addedNodes.forEach((node) => {
-              if (node.nodeType === Node.ELEMENT_NODE && node.tagName === "LINK" && node.getAttribute("rel")?.includes("icon")) {
-                faviconChanged = true;
-              }
-            });
-          }
-          if (mutation.type === "attributes" && mutation.target.tagName === "LINK" && mutation.target.getAttribute("rel")?.includes("icon") && (mutation.attributeName === "href" || mutation.attributeName === "rel")) {
-            faviconChanged = true;
-          }
-        });
-        if (faviconChanged) {
-          setTimeout(replaceFavicon, 100);
-        }
-      });
-      faviconObserver.observe(document.head, {
-        childList: true,
-        subtree: true,
-        attributes: true,
-        attributeFilter: ["href", "rel"]
-      });
-    }
-    function overrideDOMMethods() {
-      const originalSetAttribute = Element.prototype.setAttribute;
-      const originalAppendChild = Node.prototype.appendChild;
-      const originalInsertBefore = Node.prototype.insertBefore;
-      Element.prototype.setAttribute = function(name, value) {
-        if (this.tagName === "LINK" && name === "href" && this.getAttribute("rel")?.includes("icon") && !value.includes("data:image")) {
-          value = customFaviconUrl || createCustomFavicon();
-        }
-        return originalSetAttribute.call(this, name, value);
-      };
-      Node.prototype.appendChild = function(node) {
-        if (node && node.tagName === "LINK" && node.getAttribute("rel")?.includes("icon")) {
-          node.setAttribute("href", customFaviconUrl || createCustomFavicon());
-        }
-        return originalAppendChild.call(this, node);
-      };
-      Node.prototype.insertBefore = function(newNode, referenceNode) {
-        if (newNode && newNode.tagName === "LINK" && newNode.getAttribute("rel")?.includes("icon")) {
-          newNode.setAttribute("href", customFaviconUrl || createCustomFavicon());
-        }
-        return originalInsertBefore.call(this, newNode, referenceNode);
-      };
-    }
-    replaceFavicon();
-    setupFaviconObserver();
-    overrideDOMMethods();
-    const interval = setInterval(replaceFavicon, 3e3);
-    return () => {
-      if (faviconObserver) faviconObserver.disconnect();
-      clearInterval(interval);
-    };
-  }
-  function initPlaceholderReplacement() {
-    let placeholderObserver;
-    let isReplacing = false;
-    function replacePlaceholders() {
-      if (isReplacing) return;
-      isReplacing = true;
-      const textareas = document.querySelectorAll("textarea");
-      textareas.forEach((textarea) => {
-        if (textarea.placeholder && textarea.placeholder.includes("Ask anything")) {
-          Object.defineProperty(textarea, "placeholder", {
-            get: function() {
-              return "Pulse Query \u{1FAC0}";
-            },
-            set: function(value) {
-              if (!value.includes("Pulse Query")) {
-                this.setAttribute("placeholder", "Pulse Query \u{1FAC0}");
-              }
-            },
-            configurable: true
-          });
-          textarea.setAttribute("placeholder", "Pulse Query \u{1FAC0}");
-          const originalDescriptor = Object.getOwnPropertyDescriptor(
-            textarea,
-            "placeholder"
-          );
-          if (!originalDescriptor || !originalDescriptor.get) {
-            textarea._originalPlaceholder = "Pulse Query \u{1FAC0}";
-          }
-        }
-      });
-      isReplacing = false;
-    }
-    function setupObserver() {
-      if (placeholderObserver) placeholderObserver.disconnect();
-      placeholderObserver = new MutationObserver((mutations) => {
-        let shouldReplace = false;
-        mutations.forEach((mutation) => {
-          if (mutation.type === "childList") {
-            mutation.addedNodes.forEach((node) => {
-              if (node.nodeType === Node.ELEMENT_NODE) {
-                if (node.tagName === "TEXTAREA" || node.querySelector("textarea")) {
-                  shouldReplace = true;
-                }
-              }
-            });
-          }
-          if (mutation.type === "attributes" && mutation.target.tagName === "TEXTAREA" && mutation.attributeName === "placeholder") {
-            shouldReplace = true;
-          }
-        });
-        if (shouldReplace) {
-          setTimeout(replacePlaceholders, 100);
-        }
-      });
-      placeholderObserver.observe(document.body, {
-        childList: true,
-        subtree: true,
-        attributes: true,
-        attributeFilter: ["placeholder"]
-      });
-    }
-    replacePlaceholders();
-    setupObserver();
-    const interval = setInterval(replacePlaceholders, 2e3);
-    return () => {
-      if (placeholderObserver) placeholderObserver.disconnect();
-      clearInterval(interval);
-    };
-  }
-  function createSJPulseUI() {
-    const css = `
-    /* Main Theme - Deep Night */
-    body {
-      background: linear-gradient(135deg, #0c0c1a 0%, #1a1a2e 50%, #16213e 100%) !important;
-      color: #A7B49E !important;
-      font-family: 'Segoe UI', system-ui, sans-serif !important;
-    }
-
-    /* Header & Branding */
-    header, .sticky {
-      background: rgba(10, 10, 20, 0.95) !important;
-      backdrop-filter: blur(20px) !important;
-      border-bottom: 1px solid #2a2a4a !important;
-    }
-
-    /* Main Chat Area - Safe styling */
-    main, [class*="flex-1"] {
-      background: rgba(15, 15, 30, 0.8) !important;
-      border-radius: 16px !important;
-      margin: 8px !important;
-      border: 1px solid #2a2a4a !important;
-    }
-
-    /* Message Bubbles */
-    .text-base {
-      background: linear-gradient(135deg, #1e1e3f 0%, #2d2b55 100%) !important;
-      border-radius: 18px !important;
-      padding: 16px 20px !important;
-      margin: 12px 0 !important;
-      border: 1px solid #3a3a6a !important;
-      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3) !important;
-      color: #A7B49E !important;
-    }
-
-    /* User message bubbles */
-    [data-message-author-role="user"] .text-base {
-      background: linear-gradient(135deg, #2a2a5a 0%, #3a3a7a 100%) !important;
-      border: 1px solid #4a4a8a !important;
-      color: #A7B49E !important;
-    }
-
-    /* Input Area - Fixed */
-    form textarea, [data-testid*="textarea"] {
-      background: rgba(20, 20, 40, 0.9) !important;
-      color: #A7B49E !important;
-      border: 1px solid #3a3a6a !important;
-      border-radius: 20px !important;
-      padding: 16px 20px !important;
-      font-size: 14px !important;
-      backdrop-filter: blur(10px) !important;
-      resize: vertical !important;
-    }
-
-    form textarea:focus, [data-testid*="textarea"]:focus {
-      border-color: #646cff !important;
-      box-shadow: 0 0 0 2px rgba(100, 108, 255, 0.2) !important;
-      outline: none !important;
-    }
-
-    /* Send button */
-    button[data-testid*="send"] {
-      background: linear-gradient(135deg, #646cff 0%, #747bff 100%) !important;
-      border: none !important;
-      border-radius: 12px !important;
-      color: white !important;
-      transition: all 0.3s ease !important;
-    }
-
-    button[data-testid*="send"]:hover {
-      transform: translateY(-2px) !important;
-      box-shadow: 0 8px 25px rgba(100, 108, 255, 0.4) !important;
-    }
-
-    /* Sidebar - Safe styling */
-    nav, [class*="sidebar"], [class*="Nav"] {
-      background: rgba(10, 10, 20, 0.9) !important;
-      backdrop-filter: blur(15px) !important;
-      border-right: 1px solid #2a2a4a !important;
-    }
-
-    /* Sidebar items */
-    nav a, [class*="Nav"] a, [class*="nav"] a {
-      background: transparent !important;
-      border-radius: 10px !important;
-      margin: 4px 8px !important;
-      transition: all 0.3s ease !important;
-      color: #A7B49E !important;
-    }
-
-    nav a:hover, [class*="Nav"] a:hover {
-      background: rgba(100, 108, 255, 0.1) !important;
-      transform: translateX(4px) !important;
-    }
-
-    /* Code Blocks */
-    pre, code {
-      background: #1a1a2e !important;
-      border: 1px solid #2a2a4a !important;
-      border-radius: 12px !important;
-      color: #A7B49E !important;
-    }
-
-    /* Copy/Yank button */
-    button:has(> div > svg), button[class*="copy"] {
-      background: rgba(100, 108, 255, 0.1) !important;
-      border: 1px solid #646cff !important;
-      border-radius: 8px !important;
-      color: #646cff !important;
-      transition: all 0.3s ease !important;
-    }
-
-    button:has(> div > svg):hover, button[class*="copy"]:hover {
-      background: #646cff !important;
-      color: white !important;
-      transform: scale(1.05) !important;
-    }
-
-    /* Scrollbars */
-    ::-webkit-scrollbar {
-      width: 8px;
-    }
-
-    ::-webkit-scrollbar-track {
-      background: #1a1a2e;
-    }
-
-    ::-webkit-scrollbar-thumb {
-      background: #646cff;
-      border-radius: 4px;
-    }
-
-    /* Loading Animation */
-    [class*="animate-spin"] {
-      color: #646cff !important;
-    }
-
-    /* New Chat button */
-    button:has(svg), button[class*="new-chat"] {
-      background: linear-gradient(135deg, #646cff 0%, #747bff 100%) !important;
-      border: none !important;
-      border-radius: 12px !important;
-      color: white !important;
-      font-weight: 600 !important;
-    }
-
-    /* User menu */
-    [class*="user"] button {
-      background: transparent !important;
-      border: 1px solid #3a3a6a !important;
-      border-radius: 12px !important;
-      color: #A7B49E !important;
-    }
-
-    /* Additional text elements */
-    h1, h2, h3, h4, h5, h6, p, span, div, li, td, th, label {
-      color: #A7B49E !important;
-    }
-
-    /* Input text */
-    input, select, option {
-      color: #A7B49E !important;
-    }
-
-    /* Placeholder text */
-    ::placeholder {
-      color: #A7B49E !important;
-      opacity: 0.7 !important;
-    }
-  `;
-    const style = document.createElement("style");
-    style.id = "sjPulse-night-theme";
-    style.textContent = css;
-    document.head.appendChild(style);
-  }
-  function replaceBranding() {
-    const replaceText = (node) => {
-      if (node.nodeType === Node.TEXT_NODE) {
-        let newText = node.textContent;
-        if (!node.parentElement?.closest("script") && !node.parentElement?.closest("style") && !node.parentElement?.getAttribute("href")) {
-          newText = newText.replace(/\bChatGPT\b/gi, "SJ Pulse \u{1F680}").replace(/\bChatGPT-\d\b/gi, "SJ Pulse").replace(/Copy code/gi, "Yank \u{1F4CB}").replace(/\bCopy\b/gi, "Yank").replace(/\bAsk anything\b/gi, "Pulse Query \u{1FAC0}");
-        }
-        if (newText !== node.textContent) {
-          node.textContent = newText;
-        }
-      } else {
-        node.childNodes.forEach(replaceText);
-      }
-    };
-    replaceText(document.body);
-    const observer = new MutationObserver((mutations) => {
-      mutations.forEach((mutation) => {
-        mutation.addedNodes.forEach((node) => {
-          if (node.nodeType === Node.ELEMENT_NODE) {
-            replaceText(node);
-          }
-        });
-      });
-    });
-    observer.observe(document.body, {
-      childList: true,
-      subtree: true
-    });
-  }
-  function createVariantThemes() {
-    return {
-      cyberpunk: `
-      body {
-        background: linear-gradient(135deg, #0a0a0a 0%, #1a0033 100%) !important;
-        color: #A7B49E !important;
-      }
-      .text-base {
-        background: linear-gradient(135deg, #1a0033 0%, #330066 100%) !important;
-        border: 1px solid #00ff88 !important;
-        box-shadow: 0 0 20px rgba(0, 255, 136, 0.3) !important;
-        color: #A7B49E !important;
-      }
-      button[data-testid*="send"] {
-        background: linear-gradient(135deg, #ff00ff 0%, #00ff88 100%) !important;
-      }
-      h1, h2, h3, h4, h5, h6, p, span, div, li, td, th, label {
-        color: #A7B49E !important;
-      }
-    `,
-      "midnight-blue": `
-      body {
-        background: linear-gradient(135deg, #0f1a2b 0%, #1e3a5f 100%) !important;
-        color: #A7B49E !important;
-      }
-      .text-base {
-        background: linear-gradient(135deg, #1e3a5f 0%, #2e4a7f 100%) !important;
-        border: 1px solid #3a5f8f !important;
-        color: #A7B49E !important;
-      }
-      h1, h2, h3, h4, h5, h6, p, span, div, li, td, th, label {
-        color: #A7B49E !important;
-      }
-    `,
-      amethyst: `
-      body {
-        background: linear-gradient(135deg, #1a102b 0%, #3a1f5f 100%) !important;
-        color: #A7B49E !important;
-      }
-      .text-base {
-        background: linear-gradient(135deg, #2a1f4f 0%, #4a2f7f 100%) !important;
-        border: 1px solid #6b46c1 !important;
-        color: #A7B49E !important;
-      }
-      h1, h2, h3, h4, h5, h6, p, span, div, li, td, th, label {
-        color: #A7B49E !important;
-      }
-    `,
-      "deep-space": `
-      body {
-        background: linear-gradient(135deg, #000000 0%, #1a1a2e 50%, #0f3460 100%) !important;
-        color: #A7B49E !important;
-      }
-      .text-base {
-        background: linear-gradient(135deg, #1a1a2e 0%, #0f3460 100%) !important;
-        border: 1px solid #4cc9f0 !important;
-        color: #A7B49E !important;
-      }
-      h1, h2, h3, h4, h5, h6, p, span, div, li, td, th, label {
-        color: #A7B49E !important;
-      }
-    `
-    };
-  }
-  if (window.location.hostname.includes("chatgpt.com")) {
-    let currentVariant = "default";
-    const variants = createVariantThemes();
-    let cleanupPlaceholders;
-    let cleanupFavicon;
-    createSJPulseUI();
-    replaceBranding();
-    cleanupFavicon = initFaviconReplacement();
-    cleanupPlaceholders = initPlaceholderReplacement();
-    mapkey3("ts", "Toggle SJ Pulse/ChatGPT UI", () => {
-      const style = document.getElementById("sjPulse-night-theme");
-      if (style) {
-        style.remove();
-        if (cleanupPlaceholders) cleanupPlaceholders();
-        if (cleanupFavicon) cleanupFavicon();
-        Front.showBanner("\u{1F535} Original ChatGPT UI Restored");
-      } else {
-        createSJPulseUI();
-        cleanupPlaceholders = initPlaceholderReplacement();
-        cleanupFavicon = initFaviconReplacement();
-        Front.showBanner("\u{1F680} SJ Pulse Stealth UI Activated");
-      }
-    });
-    mapkey3("tv", "Cycle theme variants", () => {
-      const variantNames = Object.keys(variants);
-      const currentIndex = variantNames.indexOf(currentVariant);
-      const nextIndex = (currentIndex + 1) % (variantNames.length + 1);
-      document.getElementById("sjPulse-variant")?.remove();
-      if (nextIndex === 0) {
-        currentVariant = "default";
-        Front.showBanner("\u{1F319} Default Night Theme");
-      } else {
-        currentVariant = variantNames[nextIndex - 1];
-        const variantStyle = document.createElement("style");
-        variantStyle.id = "sjPulse-variant";
-        variantStyle.textContent = variants[currentVariant];
-        document.head.appendChild(variantStyle);
-        Front.showBanner(
-          `\u{1F3A8} ${currentVariant.split("-").map((word) => word.charAt(0).toUpperCase() + word.slice(1)).join(" ")} Theme`
-        );
-      }
-    });
-    mapkey3("tc", "Toggle compact layout", () => {
-      const styleId = "sjPulse-compact-style";
-      let style = document.getElementById(styleId);
-      if (style) {
-        style.remove();
-        Front.showBanner("\u{1F4CF} Normal Layout");
-      } else {
-        style = document.createElement("style");
-        style.id = styleId;
-        style.textContent = `
-        .text-base { 
-          font-size: 13px !important; 
-          padding: 12px 16px !important; 
-          margin: 8px 0 !important;
-        }
-        form textarea, [data-testid*="textarea"] {
-          padding: 12px 16px !important;
-          font-size: 13px !important;
-          min-height: 60px !important;
-        }
-        main, [class*="flex-1"] {
-          margin: 4px !important;
-        }
-      `;
-        document.head.appendChild(style);
-        Front.showBanner("\u{1F4D0} Compact Layout");
-      }
-    });
-    Front.showBanner(
-      "\u{1F680} SJ Pulse Stealth UI Loaded! Use 'ts' to toggle, 'tv' for variants, 'tc' for compact"
-    );
-  }
 
   // surfingkeys.js
   settings.defaultLLMProvider = "deepseek";
