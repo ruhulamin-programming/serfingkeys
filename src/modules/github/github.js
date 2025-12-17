@@ -1,17 +1,70 @@
+//w: (start)╭──────────── Block Start ────────────╮
+
+//w: (end)  ╰───────────── Block End ─────────────╯
+//w: 1╭──────────── Block Start ────────────╮
+//t: github repository page opening
 api.mapkey("gro", "Github own Repositories", function () {
-  window.open(
-    "https://github.com/ruhulamin-programming?tab=repositories",
-    "_blank"
-  );
+  window.open("https://github.com/shahjalal-labs?tab=repositories", "_blank");
 });
 
+//t:  new repo for github
+
+//w: (start)╭──────────── github Ruhul vai  ────────────╮
+//t: github repository page opening
+
+api.mapkey("grr", "github Ruhul vai ", function () {
+  const baseUrl = "https://github.com/ruhulamin-programming";
+  const repoUrl = baseUrl + "?tab=repositories";
+
+  if (window.location.href.startsWith(repoUrl)) {
+    // On repositories page → switch to profile
+    window.location.href = baseUrl;
+  } else if (window.location.href.startsWith(baseUrl)) {
+    // On profile (or subpage under profile) → switch to repositories
+    window.location.href = repoUrl;
+  } else {
+    // Anywhere else → open repositories in a new tab
+    window.open(repoUrl, "_blank");
+  }
+});
+//w: (end)╰───────────── github Ruhul vai  ─────────────╯
+
+//
+//w: (start)╭──────────── github Mirhasankhan vai ────────────╮
+api.mapkey("grm", "github Mirhasankhan vai", function () {
+  const baseUrl = "https://github.com/Mirhasankhan";
+  const repoUrl = baseUrl + "?tab=repositories";
+
+  if (window.location.href.startsWith(repoUrl)) {
+    // On repositories page → switch to profile
+    window.location.href = baseUrl;
+  } else if (window.location.href.startsWith(baseUrl)) {
+    // On profile (or subpage under profile) → switch to repositories
+    window.location.href = repoUrl;
+  } else {
+    // Anywhere else → open repositories in a new tab
+    window.open(repoUrl, "_blank");
+  }
+});
+//w: (end)╰───────────── github Mirhasankhan vai ─────────────╯
+//
+
+//w: (start)╭──────────── create new github repo────────────╮
 api.mapkey("grn", "create new github repo", function () {
   window.open("https://github.com/new", "_blank");
 });
+//w: (end)  ╰───────────── create new github repo───────────╯
 
+//w: 2╭──────────── Block Start ────────────╮
 // t: 📋 Smart GitHub Repo Copier
 api.mapkey("gyu", "📋 Smart GitHub Repo Copier", async function () {
   const url = window.location.href;
+
+  // Helper to extract user/repo from href
+  const extractUserRepo = (href) => {
+    const match = href.match(/^\/([^/]+)\/([^/]+)/);
+    return match ? `${match[1]}/${match[2]}` : null;
+  };
 
   // If on repositories list page
   if (url.includes("?tab=repositories")) {
@@ -60,7 +113,10 @@ api.mapkey("gyu", "📋 Smart GitHub Repo Copier", async function () {
     api.Front.showBanner("⚠️ Not on a GitHub repo or repositories page");
   }
 });
+//w: 2╰───────────── Block End ─────────────╯
 
+//w: 3╭──────────── Block Start ────────────╮
+//t: copy github username/repo like shahjalal-labs/nvim
 api.mapkey(
   "gyr",
   "Copy GitHub username/repo",
@@ -83,7 +139,8 @@ api.mapkey(
   },
   { domain: /./, prefix: " " }
 );
-
+//w: 3╰───────────── Block End ─────────────╯
+//w: 5╭──────────── Block Start ────────────╮
 api.mapkey("grp", "👤 Go to GitHub user profile from repo page", function () {
   const match = window.location.href.match(
     /^https:\/\/github\.com\/([^\/?#]+)/
@@ -147,3 +204,30 @@ api.mapkey(
     }
   }
 );
+
+//w: 5╰───────────── Block End ─────────────╯
+//w: 6╭──────────── Block Start ────────────╮
+//w: opening github ruhulamin-programming vai
+
+/* api.mapkey("gz", "github ruhulamin-programming vai", function () {
+  if (window.location.hostname.includes("github.com")) {
+    window.location.href =
+      "https://github.com/ruhulamin-programming?tab=repositories";
+  } else {
+    window.open(
+      "https://github.com/ruhulamin-programming?tab=repositories",
+      "_blank",
+    );
+  }
+}); */
+
+//w: 6╰───────────── Block End ─────────────╯
+//w: 7╭──────────── Block Start ────────────╮
+
+//w: 7╰───────────── Block End ─────────────╯
+//w: 8╭──────────── Block Start ────────────╮
+
+//w: 8╰───────────── Block End ─────────────╯
+//w: 9╭──────────── Block Start ────────────╮
+
+//w: 9╰───────────── Block End ─────────────╯
