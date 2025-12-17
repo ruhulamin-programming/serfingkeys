@@ -399,6 +399,12 @@
   api.mapkey("sb", "Open blank page", function() {
     window.open("https://blank.page/", "_blank");
   });
+  api.mapkey("od", "Open Database", function() {
+    window.open(
+      "https://cloud.mongodb.com/v2/689b5341cb09401668edf04d#/explorer/689b53cb74d9477bcbecb811",
+      "_blank"
+    );
+  });
 
   // src/modules/opener/aiOpener.js
   api.mapkey("oac", "Open ChatGPT chk", function() {
@@ -648,24 +654,8 @@
   });
 
   // src/modules/opener/islamicOpener.js
-  api.mapkey("sj", "Open Wedding Nasheed", function() {
-    window.open(
-      "https://www.youtube.com/watch?v=dWBgNHT4ipE&ab_channel=HuzaifahNasheeds",
-      "_blank"
-    );
-  });
   api.mapkey("opq", "Open Quran", function() {
     window.open("https://quran.com", "_blank");
-  });
-  api.mapkey("ops", "open shariyah solution ahmadullah", function() {
-    if (window.location.hostname.includes("youtube.com") && window.location.pathname.toLowerCase().includes("@sheikhahmadullahofficial")) {
-      window.location.href = "https://www.youtube.com/@sheikhahmadullahofficial/streams";
-    } else {
-      window.open(
-        "https://www.youtube.com/@sheikhahmadullahofficial/streams",
-        "_blank"
-      );
-    }
   });
 
   // src/modules/yank/imgYank.js
