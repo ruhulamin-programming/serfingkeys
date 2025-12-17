@@ -429,7 +429,7 @@
     if (window.location.hostname.includes("deepseek")) {
       window.location.href = "https://chat.deepseek.com";
     } else {
-      window.open("https://chat.deepseek.com/", "_blank");
+      window.open("https:x//chat.deepseek.com/", "_blank");
     }
   });
   api.mapkey("oaq", "Open claude ai", function() {
@@ -2622,39 +2622,16 @@
 
   // src/modules/github/github.js
   api.mapkey("gro", "Github own Repositories", function() {
-    window.open("https://github.com/shahjalal-labs?tab=repositories", "_blank");
-  });
-  api.mapkey("grr", "github Ruhul vai ", function() {
-    const baseUrl = "https://github.com/ruhulamin-programming";
-    const repoUrl = baseUrl + "?tab=repositories";
-    if (window.location.href.startsWith(repoUrl)) {
-      window.location.href = baseUrl;
-    } else if (window.location.href.startsWith(baseUrl)) {
-      window.location.href = repoUrl;
-    } else {
-      window.open(repoUrl, "_blank");
-    }
-  });
-  api.mapkey("grm", "github Mirhasankhan vai", function() {
-    const baseUrl = "https://github.com/Mirhasankhan";
-    const repoUrl = baseUrl + "?tab=repositories";
-    if (window.location.href.startsWith(repoUrl)) {
-      window.location.href = baseUrl;
-    } else if (window.location.href.startsWith(baseUrl)) {
-      window.location.href = repoUrl;
-    } else {
-      window.open(repoUrl, "_blank");
-    }
+    window.open(
+      "https://github.com/ruhulamin-programming?tab=repositories",
+      "_blank"
+    );
   });
   api.mapkey("grn", "create new github repo", function() {
     window.open("https://github.com/new", "_blank");
   });
   api.mapkey("gyu", "\u{1F4CB} Smart GitHub Repo Copier", async function() {
     const url = window.location.href;
-    const extractUserRepo = (href) => {
-      const match = href.match(/^\/([^/]+)\/([^/]+)/);
-      return match ? `${match[1]}/${match[2]}` : null;
-    };
     if (url.includes("?tab=repositories")) {
       let clickLoopActive = true;
       const runHintLoop = () => {
