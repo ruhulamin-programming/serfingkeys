@@ -396,14 +396,8 @@
   api.mapkey("ay", "youtube opening", function() {
     window.open("https://www.youtube.com/", "_blank");
   });
-  api.mapkey("sb", "Open blank page", function() {
-    window.open("https://blank.page/", "_blank");
-  });
   api.mapkey("od", "Open Database", function() {
-    window.open(
-      "https://cloud.mongodb.com/v2/689b5341cb09401668edf04d#/explorer/689b53cb74d9477bcbecb811",
-      "_blank"
-    );
+    window.open("https://cloud.mongodb.com/v2/", "_blank");
   });
 
   // src/modules/opener/aiOpener.js
@@ -508,68 +502,6 @@
       window.location.href = "https://teams.live.com/v2/";
     } else {
       window.open("https://teams.live.com/v2/", "_blank");
-    }
-  });
-
-  // src/modules/opener/phOpener.js
-  api.mapkey("pso", "scribble l1b10", () => {
-    window.open(
-      "https://web.programming-hero.com/update-1/video/update-1-42-1-scribbles-cafe-project-overview-and-tailwind-setup",
-      "_blank"
-    );
-  });
-  api.mapkey("pwh", "HELP DESK", function() {
-    window.open("https://helpdesk.programming-hero.com/", "_blank");
-  });
-  api.mapkey("si", "L2B4Web", function() {
-    window.open(
-      "https://web.programming-hero.com/level2-batch-4-frontend-track/video/level2-batch-4-frontend-track-36-11-displaying-blogs-and-handling-loading-with-rtk-query-module-summary",
-      "_blank"
-    );
-  });
-  api.mapkey("sk", "outline L2B4", function() {
-    window.open(
-      "https://web.programming-hero.com/676fa61320dff5186afcd780/course-outline",
-      "_blank"
-    );
-  });
-  api.mapkey("ae", "Conceptual Level1 Batch 10", function() {
-    window.open("https://web.programming-hero.com/conceptual-session", "_blank");
-  });
-  api.mapkey("acd", "Conceptual Level1 Batch 11", function() {
-    window.open("https://web.programming-hero.com/conceptual-session", "_blank");
-  });
-  api.mapkey("sr", "redux", function() {
-    window.open(
-      "https://web.programming-hero.com/level2-batch-1/video/level2-batch-1-21-1-project-initialization-and-redux-store-setup-recap",
-      "_blank"
-    );
-  });
-  api.mapkey("sp", "pre requisite level2", function() {
-    window.open(
-      "https://web.programming-hero.com/next-level-prerequisites-batch4/video/next-level-prerequisites-batch4-45-8-active-route-loading-spinner-uselocation-usenavigation",
-      "_blank"
-    );
-  });
-  api.mapkey("s4", "L2B4 typescript module 2", function() {
-    window.open(
-      "https://web.programming-hero.com/level2-batch-4/video/level2-batch-4-2-1-type-assertion-type-narrowing"
-    );
-  });
-  api.mapkey("pwj", "Level1 Batch 11", function() {
-    window.open(
-      "https://web.programming-hero.com/web-11/video/web-11-15-9-module-summary-legal-system-practice-task-",
-      "_blank"
-    );
-  });
-  api.mapkey("php", "open ph podcast", function() {
-    if (window.location.hostname.includes("youtube.com") && window.location.pathname.toLowerCase().includes("@ProgrammingHeroCommunity/podcasts")) {
-      window.location.href = "https://www.youtube.com/@ProgrammingHeroCommunity/podcasts";
-    } else {
-      window.open(
-        "https://www.youtube.com/@ProgrammingHeroCommunity/podcasts",
-        "_blank"
-      );
     }
   });
 
@@ -2098,14 +2030,6 @@
   });
 
   // src/modules/opener/resourceOpener.js
-  var openImgbb = () => {
-    if (window.location.hostname.includes("imgbb") || window.location.hostname.includes("ibb")) {
-      window.location.href = "https://md-shahjalal.imgbb.com/";
-    } else {
-      window.open("https://md-shahjalal.imgbb.com/", "_blank");
-    }
-  };
-  api.mapkey("ori", "open imgbb Resource", openImgbb);
   var openPeopleDesk = () => {
     if (window.location.hostname.includes("app.peopledesk.io")) {
       window.location.href = "https://app.peopledesk.io/dashboard/employee";

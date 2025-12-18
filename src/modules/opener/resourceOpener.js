@@ -1,19 +1,4 @@
-//w: ╭──────────── Block Start ────────────╮
-const openImgbb = () => {
-  if (
-    window.location.hostname.includes("imgbb") ||
-    window.location.hostname.includes("ibb")
-  ) {
-    window.location.href = "https://md-shahjalal.imgbb.com/";
-  } else {
-    window.open("https://md-shahjalal.imgbb.com/", "_blank");
-  }
-};
-api.mapkey("ori", "open imgbb Resource", openImgbb);
-
-//w: ╰───────────── Block End ─────────────╯
-
-//w: ╭──────────── Block Start ────────────╮
+//* ╭──────────── Block Start ────────────╮
 const openPeopleDesk = () => {
   if (window.location.hostname.includes("app.peopledesk.io")) {
     window.location.href = "https://app.peopledesk.io/dashboard/employee";
@@ -22,10 +7,9 @@ const openPeopleDesk = () => {
   }
 };
 api.mapkey("orp", "openPeopleDesk", openPeopleDesk);
-//w: ╰───────────── Block End ─────────────╯
-//
+//* ╰───────────── Block End ─────────────╯
 
-//w: ╭──────────── Block Start ────────────╮
+//* ╭──────────── Block Start ────────────╮
 const openTeamUnitySheets = () => {
   if (window.location.hostname.includes("docs")) {
     window.location.href =
@@ -38,4 +22,4 @@ const openTeamUnitySheets = () => {
   }
 };
 api.mapkey("oru", "open Team Unity Sheets", openTeamUnitySheets);
-//w: ╰───────────── Block End ─────────────╯
+//* ╰───────────── Block End ─────────────╯

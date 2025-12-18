@@ -1,4 +1,4 @@
-//w: ╭──────────── Block Start ────────────╮
+//* ╭──────────── Block Start ────────────╮
 api.mapkey("ocm", "open mongodb", function () {
   if (window.location.hostname.includes("mongodb")) {
     window.location.href = "https://cloud.mongodb.com";
@@ -6,10 +6,9 @@ api.mapkey("ocm", "open mongodb", function () {
     window.open("https://cloud.mongodb.com", "_blank");
   }
 });
-//w: ╰───────────── Block End ─────────────╯
+//* ╰───────────── Block End ─────────────╯
 
-//
-//w: ╭──────────── Block Start ────────────╮
+//* ╭──────────── Block Start ────────────╮
 api.mapkey("ocn", "open nextjs Docs", function () {
   if (window.location.hostname.includes("nextjs.org")) {
     window.location.href = "https://nextjs.org/docs";
@@ -17,10 +16,9 @@ api.mapkey("ocn", "open nextjs Docs", function () {
     window.open("https://nextjs.org/docs", "_blank");
   }
 });
-//w: ╰───────────── Block End ─────────────╯
-//
+//* ╰───────────── Block End ─────────────╯
 
-//w: (start)╭──────────── Fiverr Message Rewriter ────────────╮
+//* ╭──────────── Block Start ────────────╮
 api.mapkey("ocf", "Fiverr Message Rewriter", function () {
   if (window.location.hostname.includes("relevance-phi.vercel.app")) {
     window.location.href = "https://relevance-phi.vercel.app/";
@@ -28,4 +26,4 @@ api.mapkey("ocf", "Fiverr Message Rewriter", function () {
     window.open("https://relevance-phi.vercel.app/", "_blank");
   }
 });
-//w: (end)  ╰──────────── Fiverr Message Rewriter ────────────╯
+//* ╰───────────── Block End ─────────────╯
