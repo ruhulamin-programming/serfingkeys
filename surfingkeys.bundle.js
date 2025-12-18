@@ -2570,6 +2570,11 @@
     }
   });
 
+  // src/modules/opener/banner.js
+  api.mapkey("ts", "Open Quran", function() {
+    api.Front.showBanner("\uFDFD Bismillah-ir-Rahman-ir-Rahim \uFDFD", 6e3);
+  });
+
   // surfingkeys.js
   settings.defaultLLMProvider = "deepseek";
   settings.llm = {
