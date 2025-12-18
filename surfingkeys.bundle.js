@@ -2178,17 +2178,6 @@
   });
 
   // src/modules/opener/resourceOpener.js
-  var openGDrive = () => {
-    if (window.location.hostname.includes("drive")) {
-      window.location.href = "https://drive.google.com/drive/u/0/folders/1zjnO2RfqwIhV_95-7nMnTPi1-2q5m1Cp";
-    } else {
-      window.open(
-        "https://drive.google.com/drive/u/0/folders/1zjnO2RfqwIhV_95-7nMnTPi1-2q5m1Cp",
-        "_blank"
-      );
-    }
-  };
-  api.mapkey("ord", "open GDrive Resource", openGDrive);
   var openImgbb = () => {
     if (window.location.hostname.includes("imgbb") || window.location.hostname.includes("ibb")) {
       window.location.href = "https://md-shahjalal.imgbb.com/";
@@ -2197,29 +2186,6 @@
     }
   };
   api.mapkey("ori", "open imgbb Resource", openImgbb);
-  var openJpSheet = () => {
-    if (window.location.hostname.includes("docs")) {
-      window.location.href = "https://docs.google.com/spreadsheets/d/1OA2UGMcqJc6zST3BVR70qUqyMnjftBuFHLGP7sHR0z8/edit?gid=2099620628#gid=2099620628";
-    } else {
-      window.open(
-        "https://docs.google.com/spreadsheets/d/1OA2UGMcqJc6zST3BVR70qUqyMnjftBuFHLGP7sHR0z8/edit?gid=2099620628#gid=2099620628",
-        "_blank"
-      );
-    }
-  };
-  api.mapkey("ors", "open Jp Sheet", openJpSheet);
-  var openJpMasumVaiSheet = () => {
-    if (window.location.hostname.includes("docs")) {
-      window.location.href = "https://docs.google.com/spreadsheets/d/1MVvvT7qvJZEmejn9vdfPyOnjLFCxMpqUT92eClzV9PE/edit?gid=0#gid=0";
-    } else {
-      window.open(
-        "https://docs.google.com/spreadsheets/d/1MVvvT7qvJZEmejn9vdfPyOnjLFCxMpqUT92eClzV9PE/edit?gid=0#gid=0",
-        "_blank"
-      );
-    }
-  };
-  api.mapkey("orm", "open Jp Masum Vai Sheet", openJpMasumVaiSheet);
-  api.mapkey("ork", "open Jp Masum Vai Sheet", openJpMasumVaiSheet);
   var openPeopleDesk = () => {
     if (window.location.hostname.includes("app.peopledesk.io")) {
       window.location.href = "https://app.peopledesk.io/dashboard/employee";
@@ -2641,10 +2607,6 @@
   });
   api.mapkey("gyu", "\u{1F4CB} Smart GitHub Repo Copier", async function() {
     const url = window.location.href;
-    const extractUserRepo = (href) => {
-      const match = href.match(/^\/([^/]+)\/([^/]+)/);
-      return match ? `${match[1]}/${match[2]}` : null;
-    };
     if (url.includes("?tab=repositories")) {
       let clickLoopActive = true;
       const runHintLoop = () => {
