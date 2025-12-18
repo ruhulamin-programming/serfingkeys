@@ -471,30 +471,6 @@
       window.open("https://cloud.mongodb.com", "_blank");
     }
   });
-  api.mapkey("oct", "open tailwind vite ", function() {
-    if (window.location.hostname.includes("tailwindcss")) {
-      window.location.href = "https://tailwindcss.com/docs/installation/using-vite";
-    } else {
-      window.open(
-        "https://tailwindcss.com/docs/installation/using-vite",
-        "_blank"
-      );
-    }
-  });
-  api.mapkey("ocd", "open daisyUI", function() {
-    if (window.location.hostname.includes("daisyui")) {
-      window.location.href = "https://daisyui.com/docs/install/vite/";
-    } else {
-      window.open("https://daisyui.com/docs/install/vite/", "_blank");
-    }
-  });
-  api.mapkey("ocl", "open localhost", function() {
-    if (window.location.hostname.includes("localhost")) {
-      window.open("http://localhost:5174/", "_blank");
-    } else {
-      window.open("http://localhost:5173/", "_blank");
-    }
-  });
   api.mapkey("ocn", "open nextjs Docs", function() {
     if (window.location.hostname.includes("nextjs.org")) {
       window.location.href = "https://nextjs.org/docs";
