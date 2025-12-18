@@ -60,12 +60,6 @@ api.mapkey("grn", "create new github repo", function () {
 api.mapkey("gyu", "📋 Smart GitHub Repo Copier", async function () {
   const url = window.location.href;
 
-  // Helper to extract user/repo from href
-  const extractUserRepo = (href) => {
-    const match = href.match(/^\/([^/]+)\/([^/]+)/);
-    return match ? `${match[1]}/${match[2]}` : null;
-  };
-
   // If on repositories list page
   if (url.includes("?tab=repositories")) {
     let clickLoopActive = true;
