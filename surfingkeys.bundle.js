@@ -2601,28 +2601,6 @@
     api.Front.showBanner("\uFDFD Bismillah-ir-Rahman-ir-Rahim \uFDFD", 6e3);
   });
 
-  // src/modules/insertMode/textExpanse/textExpanse.js
-  var { imapkey } = api;
-  function textPaster(keys, desc, text) {
-    imapkey(keys, desc, function() {
-      document.execCommand("insertText", false, text);
-    });
-  }
-  textPaster(",nn", "Insert Fullname: Ruhul Amin", "Ruhul Amin");
-  textPaster(",nf", "Insert Firstname: Ruhul", "Ruhul ");
-  textPaster(",er", "insert root mail ruhulamin...", "ruhulamin.et15@gmail.com");
-  textPaster(",ed", "insert mail dev.shah...", "ruhulamin.cse56@gmail.com");
-  textPaster(
-    ",ej",
-    "insert mail javedkarim.codes...",
-    "javedkarim.codes@gmail.com"
-  );
-  textPaster(
-    ",eb",
-    "Insert Backend Mail: ruhulamin.et15@gmail.com",
-    "ruhulamin.et15@gmail.com"
-  );
-
   // surfingkeys.js
   settings.defaultLLMProvider = "deepseek";
   settings.llm = {

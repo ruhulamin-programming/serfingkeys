@@ -20,7 +20,6 @@ import "./src/modules/tab.js";
 import "./src/modules/github/github.js";
 import "./src/modules/opener/smtFigma/smtFigma.js";
 import "./src/modules/opener/banner.js";
-import "./src/modules/insertMode/textExpanse/textExpanse.js";
 
 //
 settings.defaultLLMProvider = "deepseek";
