@@ -1,4 +1,4 @@
-api.mapkey("oac", "Open ChatGPT chk", function () {
+api.mapkey("oag", "Open ChatGPT chk", function () {
   let newTab = window.open("https://chatgpt.com/", "_blank"); // Open ChatGPT in a new tab
   console.log(newTab, ".surfingkeys.js", 240);
   setInterval(() => {
@@ -7,7 +7,7 @@ api.mapkey("oac", "Open ChatGPT chk", function () {
 });
 
 //open github copilot
-api.mapkey("ogc", "Open GitHub Copilot", function () {
+api.mapkey("oac", "Open GitHub Copilot", function () {
   let newTab = window.open("https://github.com/copilot/", "_blank"); // Open ChatGPT in a new tab
   console.log(newTab, ".surfingkeys.js", 240);
   setInterval(() => {

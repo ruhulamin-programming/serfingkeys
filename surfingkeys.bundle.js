@@ -404,14 +404,14 @@
   });
 
   // src/modules/opener/aiOpener.js
-  api.mapkey("oac", "Open ChatGPT chk", function() {
+  api.mapkey("oag", "Open ChatGPT chk", function() {
     let newTab = window.open("https://chatgpt.com/", "_blank");
     console.log(newTab, ".surfingkeys.js", 240);
     setInterval(() => {
       console.log(`hellow`);
     }, 2e3);
   });
-  api.mapkey("ogc", "Open GitHub Copilot", function() {
+  api.mapkey("oac", "Open GitHub Copilot", function() {
     let newTab = window.open("https://github.com/copilot/", "_blank");
     console.log(newTab, ".surfingkeys.js", 240);
     setInterval(() => {
