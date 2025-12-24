@@ -2071,17 +2071,6 @@
     }
   };
   api.mapkey("orp", "openPeopleDesk", openPeopleDesk);
-  var openTeamUnitySheets = () => {
-    if (window.location.hostname.includes("docs")) {
-      window.location.href = "https://docs.google.com/spreadsheets/d/1nGC-g1KKlB4soo28RgKguGwghvV0CCF7h_ahhUzjpFw/edit?gid=568784421#gid=568784421";
-    } else {
-      window.open(
-        "https://docs.google.com/spreadsheets/d/1nGC-g1KKlB4soo28RgKguGwghvV0CCF7h_ahhUzjpFw/edit?gid=568784421#gid=568784421",
-        "_blank"
-      );
-    }
-  };
-  api.mapkey("oru", "open Team Unity Sheets", openTeamUnitySheets);
 
   // src/modules/yank/urlYanker.js
   var { mapkey, Clipboard } = api;
