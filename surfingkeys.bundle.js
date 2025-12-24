@@ -411,6 +411,13 @@
       console.log(`hellow`);
     }, 2e3);
   });
+  api.mapkey("ogc", "Open GitHub Copilot", function() {
+    let newTab = window.open("https://github.com/copilot/", "_blank");
+    console.log(newTab, ".surfingkeys.js", 240);
+    setInterval(() => {
+      console.log(`hellow`);
+    }, 2e3);
+  });
   api.mapkey("oap", "perplexity ai", function() {
     if (window.location.hostname.includes("perplexity")) {
       window.location.href = "https://www.perplexity.ai/";

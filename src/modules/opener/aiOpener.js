@@ -6,6 +6,15 @@ api.mapkey("oac", "Open ChatGPT chk", function () {
   }, 2000);
 });
 
+//open github copilot
+api.mapkey("ogc", "Open GitHub Copilot", function () {
+  let newTab = window.open("https://github.com/copilot/", "_blank"); // Open ChatGPT in a new tab
+  console.log(newTab, ".surfingkeys.js", 240);
+  setInterval(() => {
+    console.log(`hellow`);
+  }, 2000);
+});
+
 //w: opening perplexity ai ai
 
 api.mapkey("oap", "perplexity ai", function () {
