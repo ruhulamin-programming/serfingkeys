@@ -404,7 +404,7 @@
   });
 
   // src/modules/opener/aiOpener.js
-  api.mapkey("oag", "Open ChatGPT chk", function() {
+  api.mapkey("ocg", "Open ChatGPT chk", function() {
     let newTab = window.open("https://chatgpt.com/", "_blank");
     console.log(newTab, ".surfingkeys.js", 240);
     setInterval(() => {
