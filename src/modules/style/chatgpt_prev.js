@@ -46,7 +46,7 @@ function initPlaceholderReplacement() {
         // Monitor for changes and revert if needed
         const originalDescriptor = Object.getOwnPropertyDescriptor(
           textarea,
-          "placeholder",
+          "placeholder"
         );
         if (!originalDescriptor || !originalDescriptor.get) {
           textarea._originalPlaceholder = "Pulse Query 🫀";
@@ -448,7 +448,7 @@ if (window.location.hostname.includes("chatgpt.com")) {
         `🎨 ${currentVariant
           .split("-")
           .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
-          .join(" ")} Theme`,
+          .join(" ")} Theme`
       );
     }
   });
@@ -484,6 +484,6 @@ if (window.location.hostname.includes("chatgpt.com")) {
   });
 
   Front.showBanner(
-    "🚀 SJ Pulse Stealth UI Loaded! Use 'ts' to toggle, 'tv' for variants, 'tc' for compact",
+    "🚀 SJ Pulse Stealth UI Loaded! Use 'ts' to toggle, 'tv' for variants, 'tc' for compact"
   );
 }

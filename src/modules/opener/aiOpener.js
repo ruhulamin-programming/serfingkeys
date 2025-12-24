@@ -16,7 +16,6 @@ api.mapkey("oac", "Open GitHub Copilot", function () {
 });
 
 //w: opening perplexity ai ai
-
 api.mapkey("oap", "perplexity ai", function () {
   if (window.location.hostname.includes("perplexity")) {
     window.location.href = "https://www.perplexity.ai/";
