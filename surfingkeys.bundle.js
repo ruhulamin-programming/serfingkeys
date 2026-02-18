@@ -317,7 +317,6 @@
   api.map("<Alt-k>", "h");
   api.map("h", "E");
   api.map("gj", "G");
-  api.map("gi", "yy", /.*youtube.*/i);
   api.map("l", "R");
   api.lmap("f", "<t>");
   api.map("as", ";fs");
@@ -509,7 +508,7 @@
     if (window.location.hostname.includes("teams.live.com")) {
       window.location.href = "https://teams.live.com/v2/";
     } else {
-      window.open("https://teams.live.com/v2/", "_blank");
+      window.open("https://web.telegram.org/k/", "_blank");
     }
   });
 
