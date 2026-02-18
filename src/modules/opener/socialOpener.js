@@ -29,7 +29,7 @@ api.mapkey("oul", "open linkedin", function () {
 //* ╭──────────── Block Start ────────────╮
 api.mapkey("out", "open ms team live", function () {
   if (window.location.hostname.includes("teams.live.com")) {
-    window.location.href = "https://teams.live.com/v2/";
+    window.location.href = "https://web.telegram.org/k/";
   } else {
     window.open("https://web.telegram.org/k/", "_blank");
   }
