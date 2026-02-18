@@ -31,7 +31,7 @@ api.mapkey("out", "open ms team live", function () {
   if (window.location.hostname.includes("teams.live.com")) {
     window.location.href = "https://teams.live.com/v2/";
   } else {
-    window.open("https://teams.live.com/v2/", "_blank");
+    window.open("https://web.telegram.org/k/", "_blank");
   }
 });
 //* ╰───────────── Block End ─────────────╯
