@@ -505,7 +505,7 @@
     }
   });
   api.mapkey("out", "open ms team live", function() {
-    if (window.location.hostname.includes("teams.live.com")) {
+    if (window.location.hostname === "web.telegram.org") {
       window.location.href = "https://web.telegram.org/k/";
     } else {
       window.open("https://web.telegram.org/k/", "_blank");
