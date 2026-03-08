@@ -1,4 +1,3 @@
-//* ╭──────────── Block Start ────────────╮
 const openPeopleDesk = () => {
   if (window.location.hostname.includes("app.peopledesk.io")) {
     window.location.href = "https://app.peopledesk.io/dashboard/employee";
@@ -7,4 +6,3 @@ const openPeopleDesk = () => {
   }
 };
 api.mapkey("orp", "openPeopleDesk", openPeopleDesk);
-//* ╰───────────── Block End ─────────────╯

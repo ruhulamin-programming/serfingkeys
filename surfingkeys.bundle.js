@@ -384,24 +384,12 @@
   settings.startToShowEmoji = 1;
 
   // src/modules/opener/opener.js
-  api.mapkey("ad", "Dotfiles", function() {
-    window.open(
-      "https://github.com/shahjalal-labs/allDotfilesBackupEndeavourOs",
-      "_blank"
-    );
-  });
   api.mapkey("ay", "youtube opening", function() {
     window.open("https://www.youtube.com/", "_blank");
   });
-  api.mapkey("od", "Open Database", function() {
-    window.open(
-      "https://cloud.mongodb.com/v2/689b5341cb09401668edf04d#/explorer/689b53cb74d9477bcbecb811",
-      "_blank"
-    );
-  });
 
   // src/modules/opener/aiOpener.js
-  api.mapkey("ocg", "Open ChatGPT chk", function() {
+  api.mapkey("oai", "Open ChatGPT chk", function() {
     let newTab = window.open("https://chatgpt.com/", "_blank");
     console.log(newTab, ".surfingkeys.js", 240);
     setInterval(() => {
@@ -415,31 +403,14 @@
       console.log(`hellow`);
     }, 2e3);
   });
-  api.mapkey("oap", "perplexity ai", function() {
-    if (window.location.hostname.includes("perplexity")) {
-      window.location.href = "https://www.perplexity.ai/";
-    } else {
-      window.open("https://www.perplexity.ai/", "_blank");
-    }
-  });
-  api.mapkey("oaj", "gemini ai", function() {
+  api.mapkey("oag", "gemini ai", function() {
     if (window.location.hostname.includes("gemini")) {
       window.location.href = "https://gemini.google.com/app";
     } else {
       window.open("https://gemini.google.com/app", "_blank");
     }
   });
-  api.mapkey("oad", "Deep ai", function() {
-    window.open("https://deepai.org/dashboard/images", "_blank");
-  });
-  api.mapkey("oas", "Open deepseek", function() {
-    if (window.location.hostname.includes("deepseek")) {
-      window.location.href = "https://chat.deepseek.com";
-    } else {
-      window.open("https:x//chat.deepseek.com/", "_blank");
-    }
-  });
-  api.mapkey("oaq", "Open claude ai", function() {
+  api.mapkey("oacl", "Open claude ai", function() {
     window.open("https://claude.ai/new");
   });
   api.mapkey("oak", "Chk claude", function() {
@@ -447,20 +418,6 @@
       window.location.href = "/new";
     } else {
       window.open("https://claude.ai/new", "_blank");
-    }
-  });
-  api.mapkey("oag", "open grok ai", function() {
-    if (window.location.hostname.includes("grok")) {
-      window.location.href = "https://grok.com/";
-    } else {
-      window.open("https://grok.com/", "_blank");
-    }
-  });
-  api.mapkey("oaa", "open google audio", function() {
-    if (window.location.hostname.includes("aistudio")) {
-      window.location.href = "https://aistudio.google.com/live";
-    } else {
-      window.open("https://aistudio.google.com/live", "_blank");
     }
   });
 
@@ -477,13 +434,6 @@
       window.location.href = "https://nextjs.org/docs";
     } else {
       window.open("https://nextjs.org/docs", "_blank");
-    }
-  });
-  api.mapkey("ocf", "Fiverr Message Rewriter", function() {
-    if (window.location.hostname.includes("relevance-phi.vercel.app")) {
-      window.location.href = "https://relevance-phi.vercel.app/";
-    } else {
-      window.open("https://relevance-phi.vercel.app/", "_blank");
     }
   });
 
@@ -510,11 +460,6 @@
     } else {
       window.open("https://web.telegram.org/k/", "_blank");
     }
-  });
-
-  // src/modules/opener/islamicOpener.js
-  api.mapkey("opq", "Open Quran", function() {
-    window.open("https://quran.com", "_blank");
   });
 
   // src/modules/yank/imgYank.js
@@ -574,7 +519,6 @@
   api.mapkey("cb", "\u{1F501} Persistent click hints", function repeatClickHints() {
     api.Hints.create(
       "a, button, select, input, textarea, summary, *[onclick], *[contenteditable=true], *.jfk-button, *.goog-flat-menu-button, *[role=button], *[role=link], *[role=menuitem], *[role=option], *[role=switch], *[role=tab], *[role=checkbox], *[role=combobox], *[role=menuitemcheckbox], *[role=menuitemradio]",
-      // { tabbed: true },
       function(el) {
         el.click();
         setTimeout(() => {
@@ -608,29 +552,23 @@
       });
     });
   });
-  api.mapkey(
-    "tp",
-    "\u{1F3AF} Postman key/value hints",
-    function() {
-      api.Hints.create(
-        'div.key-value-cell__placeholder[tabindex="-1"], div[class*="key-value"][tabindex], .auto-suggest-group .key-value-cell__placeholder',
-        function(element) {
-          element.click();
-          element.focus();
-          const clickEvent = new MouseEvent("click", {
-            view: window,
-            bubbles: true,
-            cancelable: true
-          });
-          element.dispatchEvent(clickEvent);
-          element.dispatchEvent(new FocusEvent("focus"));
-        },
-        { multipleHits: true }
-        // Allows multiple selections
-      );
-    }
-    // { domain: /\.postman\.(co|com)$/i }, // work only domain where postman .com exists this type something
-  );
+  api.mapkey("tp", "\u{1F3AF} Postman key/value hints", function() {
+    api.Hints.create(
+      'div.key-value-cell__placeholder[tabindex="-1"], div[class*="key-value"][tabindex], .auto-suggest-group .key-value-cell__placeholder',
+      function(element) {
+        element.click();
+        element.focus();
+        const clickEvent = new MouseEvent("click", {
+          view: window,
+          bubbles: true,
+          cancelable: true
+        });
+        element.dispatchEvent(clickEvent);
+        element.dispatchEvent(new FocusEvent("focus"));
+      },
+      { multipleHits: true }
+    );
+  });
 
   // src/modules/testDate.js
   var import_dayjs = __toESM(require_dayjs_min());
@@ -1032,7 +970,7 @@
   }
   var MAX_BITS = 32;
   function search(text, pattern, patternAlphabet, {
-    location: location2 = Config.location,
+    location = Config.location,
     distance = Config.distance,
     threshold = Config.threshold,
     findAllMatches = Config.findAllMatches,
@@ -1045,7 +983,7 @@
     }
     const patternLen = pattern.length;
     const textLen = text.length;
-    const expectedLocation = Math.max(0, Math.min(location2, textLen));
+    const expectedLocation = Math.max(0, Math.min(location, textLen));
     let currentThreshold = threshold;
     let bestLocation = expectedLocation;
     const computeMatches = minMatchCharLength > 1 || includeMatches;
@@ -1162,7 +1100,7 @@
   var stripDiacritics = String.prototype.normalize ? ((str) => str.normalize("NFD").replace(/[\u0300-\u036F\u0483-\u0489\u0591-\u05BD\u05BF\u05C1\u05C2\u05C4\u05C5\u05C7\u0610-\u061A\u064B-\u065F\u0670\u06D6-\u06DC\u06DF-\u06E4\u06E7\u06E8\u06EA-\u06ED\u0711\u0730-\u074A\u07A6-\u07B0\u07EB-\u07F3\u07FD\u0816-\u0819\u081B-\u0823\u0825-\u0827\u0829-\u082D\u0859-\u085B\u08D3-\u08E1\u08E3-\u0903\u093A-\u093C\u093E-\u094F\u0951-\u0957\u0962\u0963\u0981-\u0983\u09BC\u09BE-\u09C4\u09C7\u09C8\u09CB-\u09CD\u09D7\u09E2\u09E3\u09FE\u0A01-\u0A03\u0A3C\u0A3E-\u0A42\u0A47\u0A48\u0A4B-\u0A4D\u0A51\u0A70\u0A71\u0A75\u0A81-\u0A83\u0ABC\u0ABE-\u0AC5\u0AC7-\u0AC9\u0ACB-\u0ACD\u0AE2\u0AE3\u0AFA-\u0AFF\u0B01-\u0B03\u0B3C\u0B3E-\u0B44\u0B47\u0B48\u0B4B-\u0B4D\u0B56\u0B57\u0B62\u0B63\u0B82\u0BBE-\u0BC2\u0BC6-\u0BC8\u0BCA-\u0BCD\u0BD7\u0C00-\u0C04\u0C3E-\u0C44\u0C46-\u0C48\u0C4A-\u0C4D\u0C55\u0C56\u0C62\u0C63\u0C81-\u0C83\u0CBC\u0CBE-\u0CC4\u0CC6-\u0CC8\u0CCA-\u0CCD\u0CD5\u0CD6\u0CE2\u0CE3\u0D00-\u0D03\u0D3B\u0D3C\u0D3E-\u0D44\u0D46-\u0D48\u0D4A-\u0D4D\u0D57\u0D62\u0D63\u0D82\u0D83\u0DCA\u0DCF-\u0DD4\u0DD6\u0DD8-\u0DDF\u0DF2\u0DF3\u0E31\u0E34-\u0E3A\u0E47-\u0E4E\u0EB1\u0EB4-\u0EB9\u0EBB\u0EBC\u0EC8-\u0ECD\u0F18\u0F19\u0F35\u0F37\u0F39\u0F3E\u0F3F\u0F71-\u0F84\u0F86\u0F87\u0F8D-\u0F97\u0F99-\u0FBC\u0FC6\u102B-\u103E\u1056-\u1059\u105E-\u1060\u1062-\u1064\u1067-\u106D\u1071-\u1074\u1082-\u108D\u108F\u109A-\u109D\u135D-\u135F\u1712-\u1714\u1732-\u1734\u1752\u1753\u1772\u1773\u17B4-\u17D3\u17DD\u180B-\u180D\u1885\u1886\u18A9\u1920-\u192B\u1930-\u193B\u1A17-\u1A1B\u1A55-\u1A5E\u1A60-\u1A7C\u1A7F\u1AB0-\u1ABE\u1B00-\u1B04\u1B34-\u1B44\u1B6B-\u1B73\u1B80-\u1B82\u1BA1-\u1BAD\u1BE6-\u1BF3\u1C24-\u1C37\u1CD0-\u1CD2\u1CD4-\u1CE8\u1CED\u1CF2-\u1CF4\u1CF7-\u1CF9\u1DC0-\u1DF9\u1DFB-\u1DFF\u20D0-\u20F0\u2CEF-\u2CF1\u2D7F\u2DE0-\u2DFF\u302A-\u302F\u3099\u309A\uA66F-\uA672\uA674-\uA67D\uA69E\uA69F\uA6F0\uA6F1\uA802\uA806\uA80B\uA823-\uA827\uA880\uA881\uA8B4-\uA8C5\uA8E0-\uA8F1\uA8FF\uA926-\uA92D\uA947-\uA953\uA980-\uA983\uA9B3-\uA9C0\uA9E5\uAA29-\uAA36\uAA43\uAA4C\uAA4D\uAA7B-\uAA7D\uAAB0\uAAB2-\uAAB4\uAAB7\uAAB8\uAABE\uAABF\uAAC1\uAAEB-\uAAEF\uAAF5\uAAF6\uABE3-\uABEA\uABEC\uABED\uFB1E\uFE00-\uFE0F\uFE20-\uFE2F]/g, "")) : ((str) => str);
   var BitapSearch = class {
     constructor(pattern, {
-      location: location2 = Config.location,
+      location = Config.location,
       threshold = Config.threshold,
       distance = Config.distance,
       includeMatches = Config.includeMatches,
@@ -1173,7 +1111,7 @@
       ignoreLocation = Config.ignoreLocation
     } = {}) {
       this.options = {
-        location: location2,
+        location,
         threshold,
         distance,
         includeMatches,
@@ -1229,7 +1167,7 @@
         return result2;
       }
       const {
-        location: location2,
+        location,
         distance,
         threshold,
         findAllMatches,
@@ -1241,7 +1179,7 @@
       let hasMatches = false;
       this.chunks.forEach(({ pattern, alphabet, startIndex }) => {
         const { isMatch, score, indices } = search(text, pattern, alphabet, {
-          location: location2 + startIndex,
+          location: location + startIndex,
           distance,
           threshold,
           findAllMatches,
@@ -1419,7 +1357,7 @@
   };
   var FuzzyMatch = class extends BaseMatch {
     constructor(pattern, {
-      location: location2 = Config.location,
+      location = Config.location,
       threshold = Config.threshold,
       distance = Config.distance,
       includeMatches = Config.includeMatches,
@@ -1431,7 +1369,7 @@
     } = {}) {
       super(pattern);
       this._bitapSearch = new BitapSearch(pattern, {
-        location: location2,
+        location,
         threshold,
         distance,
         includeMatches,
@@ -1469,13 +1407,13 @@
       return /^'(.*)$/;
     }
     search(text) {
-      let location2 = 0;
+      let location = 0;
       let index;
       const indices = [];
       const patternLen = this.pattern.length;
-      while ((index = text.indexOf(this.pattern, location2)) > -1) {
-        location2 = index + patternLen;
-        indices.push([index, location2 - 1]);
+      while ((index = text.indexOf(this.pattern, location)) > -1) {
+        location = index + patternLen;
+        indices.push([index, location - 1]);
       }
       const isMatch = !!indices.length;
       return {
@@ -1539,7 +1477,7 @@
       minMatchCharLength = Config.minMatchCharLength,
       ignoreLocation = Config.ignoreLocation,
       findAllMatches = Config.findAllMatches,
-      location: location2 = Config.location,
+      location = Config.location,
       threshold = Config.threshold,
       distance = Config.distance
     } = {}) {
@@ -1551,7 +1489,7 @@
         minMatchCharLength,
         findAllMatches,
         ignoreLocation,
-        location: location2,
+        location,
         threshold,
         distance
       };
@@ -2189,50 +2127,6 @@
     });
   });
 
-  // src/modules/opener/PH/PhHelp/phHelp.js
-  api.mapkey("phg", "PH b11 github repositories", function() {
-    window.open("https://github.com/ProgrammingHero1?tab=repositories", "_blank");
-  });
-  api.mapkey("phc", "fbLevel1", function() {
-    window.open("https://www.facebook.com/groups/programmingHero", "_blank");
-  });
-  api.mapkey("ph2", "fbLevel2", function() {
-    window.open("https://www.facebook.com/groups/phapollo4", "_blank");
-  });
-  api.mapkey("phf", "fb  Level1 Batch 11 support group", function() {
-    window.open("https://www.facebook.com/groups/targetwebdevcareer", "_blank");
-  });
-  api.mapkey("phs", "SCIC", function() {
-    if (window.location.pathname.includes("/groups/scic11/announcements")) {
-      console.log(window.location.pathname, "pathname");
-      window.location.href = "https://www.facebook.com/groups/scic11/";
-    } else {
-      window.open(
-        "https://www.facebook.com/groups/scic11/announcements",
-        "_blank"
-      );
-    }
-  });
-
-  // src/modules/opener/PH/PhWeb/phWeb.js
-  api.mapkey("pws", "SCIC", function() {
-    if (window.location.pathname.includes("/groups/scic11/announcements")) {
-      console.log(window.location.pathname, "pathname");
-      window.location.href = "https://web.programming-hero.com/scic-11/video/scic-11-0-2-tips-to-get-the-best-out-of-scic";
-    } else {
-      window.open(
-        "https://web.programming-hero.com/scic-11/video/scic-11-0-2-tips-to-get-the-best-out-of-scic",
-        "_blank"
-      );
-    }
-  });
-  api.mapkey("pwo", "outline SCIC", function() {
-    window.open(
-      "https://web.programming-hero.com/688f7b564965ce7350b23f35/course-outline",
-      "_blank"
-    );
-  });
-
   // src/modules/tab.js
   var { mapkey: mapkey2, RUNTIME } = api;
   api.map("tj", "g0");
@@ -2284,161 +2178,6 @@
   api.map("txl", "gxT");
   api.map("txH", "gx0");
   api.map("txL", "gx$");
-
-  // src/modules/github/github.js
-  api.mapkey("gro", "Github own Repositories", function() {
-    window.open("https://github.com/shahjalal-labs?tab=repositories", "_blank");
-  });
-  api.mapkey("grr", "github Ruhul vai ", function() {
-    const baseUrl = "https://github.com/ruhulamin-programming";
-    const repoUrl = baseUrl + "?tab=repositories";
-    if (window.location.href.startsWith(repoUrl)) {
-      window.location.href = baseUrl;
-    } else if (window.location.href.startsWith(baseUrl)) {
-      window.location.href = repoUrl;
-    } else {
-      window.open(repoUrl, "_blank");
-    }
-  });
-  api.mapkey("grm", "github Mirhasankhan vai", function() {
-    const baseUrl = "https://github.com/Mirhasankhan";
-    const repoUrl = baseUrl + "?tab=repositories";
-    if (window.location.href.startsWith(repoUrl)) {
-      window.location.href = baseUrl;
-    } else if (window.location.href.startsWith(baseUrl)) {
-      window.location.href = repoUrl;
-    } else {
-      window.open(repoUrl, "_blank");
-    }
-  });
-  api.mapkey("grn", "create new github repo", function() {
-    window.open("https://github.com/new", "_blank");
-  });
-  api.mapkey("gyu", "\u{1F4CB} Smart GitHub Repo Copier", async function() {
-    const url = window.location.href;
-    if (url.includes("?tab=repositories")) {
-      let clickLoopActive = true;
-      const runHintLoop = () => {
-        if (!clickLoopActive) return;
-        api.Hints.create('a[href*="/"][itemprop="name codeRepository"]', (el) => {
-          const user = location.pathname.split("/")[1];
-          const repo = el.innerText.trim();
-          if (user && repo) {
-            api.Clipboard.write(`${user}/${repo}`);
-            api.Front.showBanner(`\u2705 Copied: ${user}/${repo}`);
-          }
-          setTimeout(runHintLoop, 200);
-        });
-      };
-      runHintLoop();
-      api.mapkey("<Esc>", "\u274C Stop GitHub Repo Copier loop", () => {
-        clickLoopActive = false;
-      });
-    } else if (/^https:\/\/github\.com\/[^/]+\/[^/]+/.test(url)) {
-      const match = url.match(/^https:\/\/github\.com\/([^/]+)\/([^/]+)/);
-      if (match) {
-        const userRepo = `${match[1]}/${match[2]}`;
-        api.Clipboard.write(userRepo);
-        api.Front.showBanner(`\u2705 Copied: ${userRepo}`);
-      }
-      api.Hints.create("clipboard-copy[data-copy-feedback]", (el) => {
-        const ssh = el.getAttribute("value") || el.innerText;
-        api.Clipboard.write(ssh);
-        api.Front.showBanner(`\u{1F511} Copied SSH: ${ssh}`);
-      });
-    } else {
-      api.Front.showBanner("\u26A0\uFE0F Not on a GitHub repo or repositories page");
-    }
-  });
-  api.mapkey(
-    "gyr",
-    "Copy GitHub username/repo",
-    function() {
-      const url = window.location.href;
-      if (!url.includes("github.com")) {
-        api.Front.showBanner("Not a GitHub page");
-        return;
-      }
-      const match = url.match(/github\.com\/([^\/]+)\/([^\/]+)(\/|$)/);
-      if (match) {
-        const user = match[1];
-        const repo = match[2];
-        const textToCopy = `${user}/${repo}`;
-        api.Clipboard.write(textToCopy);
-        api.Front.showBanner(`Copied: ${textToCopy}`);
-      } else {
-        api.Front.showBanner("Not a repo URL");
-      }
-    },
-    { domain: /./, prefix: " " }
-  );
-  api.mapkey("grp", "\u{1F464} Go to GitHub user profile from repo page", function() {
-    const match = window.location.href.match(
-      /^https:\/\/github\.com\/([^\/?#]+)/
-    );
-    if (match && match[1]) {
-      const user = match[1];
-      window.location.href = `https://github.com/${user}`;
-    } else {
-      api.Front.showBanner("\u274C Not on a GitHub repo page");
-    }
-  });
-  api.mapkey(
-    "gm",
-    "\u{1F464} Go to GitHub user profile or repositories tab",
-    function() {
-      const currentUrl = window.location.href;
-      const staticProfile = "https://github.com/ruhulamin-programming";
-      const yourReposTab = "https://github.com/ruhulamin-programming?tab=repositories";
-      if (!currentUrl.startsWith("https://github.com/")) {
-        api.tabOpenLink(staticProfile);
-        return;
-      }
-      const match = currentUrl.match(/^https:\/\/github\.com\/([^\/?#]+)/);
-      const currentUser = match && match[1];
-      if (!currentUser || ["features", "topics", "collections"].includes(currentUser)) {
-        window.location.href = staticProfile;
-        return;
-      }
-      const isOnProfilePage = currentUrl === `https://github.com/${currentUser}`;
-      if (isOnProfilePage) {
-        if (currentUser.toLowerCase() === "shahjalal-labs") {
-          window.location.href = yourReposTab;
-        } else {
-          window.location.href = staticProfile;
-        }
-      } else {
-        window.location.href = `https://github.com/${currentUser}`;
-      }
-    }
-  );
-
-  // src/modules/opener/smtFigma/smtFigma.js
-  api.mapkey("ova", "ashmaster figma", function() {
-    if (window.location.hostname.includes("www.figma.com")) {
-      window.location.href = "https://www.figma.com/design/zQdcO8yAzu6RBqaWAHY5Qt/ash_master_Bridge-Network-App?node-id=28320-2244&t=SAlFLJ39wHSWPOjA-1";
-    } else {
-      window.open(
-        "https://www.figma.com/design/zQdcO8yAzu6RBqaWAHY5Qt/ash_master_Bridge-Network-App?node-id=28320-2244&t=SAlFLJ39wHSWPOjA-1",
-        "_blank"
-      );
-    }
-  });
-  api.mapkey("ovda", "ashmaster docs", function() {
-    if (window.location.hostname.includes("docs.google.com")) {
-      window.location.href = "https://docs.google.com/spreadsheets/d/1QUT4qSbz6graO9wLbTLk5rrr37AMKlN09dOIG5dUCTg/edit?gid=0#gid=0";
-    } else {
-      window.open(
-        "https://docs.google.com/spreadsheets/d/1QUT4qSbz6graO9wLbTLk5rrr37AMKlN09dOIG5dUCTg/edit?gid=0#gid=0",
-        "_blank"
-      );
-    }
-  });
-
-  // src/modules/opener/banner.js
-  api.mapkey("ts", "Open Quran", function() {
-    api.Front.showBanner("\uFDFD Bismillah-ir-Rahman-ir-Rahim \uFDFD", 6e3);
-  });
 
   // surfingkeys.js
   settings.defaultLLMProvider = "deepseek";

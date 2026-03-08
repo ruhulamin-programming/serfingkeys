@@ -6,7 +6,6 @@ import "./src/modules/opener/opener.js";
 import "./src/modules/opener/aiOpener.js";
 import "./src/modules/opener/webDevOpener.js";
 import "./src/modules/opener/socialOpener.js";
-import "./src/modules/opener/islamicOpener.js";
 import "./src/modules/yank/imgYank.js";
 import "./src/modules/markdown/markdown.js";
 import "./src/modules/hoverClick/hoverClick.js";
@@ -14,12 +13,7 @@ import "./src/modules/testDate.js";
 import "./src/modules/fzfFinder.js";
 import "./src/modules/opener/resourceOpener.js";
 import "./src/modules/yank/urlYanker.js";
-import "./src/modules/opener/PH/PhHelp/phHelp.js";
-import "./src/modules/opener/PH/PhWeb/phWeb.js";
 import "./src/modules/tab.js";
-import "./src/modules/github/github.js";
-import "./src/modules/opener/smtFigma/smtFigma.js";
-import "./src/modules/opener/banner.js";
 
 //
 settings.defaultLLMProvider = "deepseek";
