@@ -26,7 +26,8 @@ api.map("tk", "g$");
   api.Normal.feedkeys("E");
   api.Front.showBanner("◀️ Previous tab");
 }); */
-api.map("th", "E");
+api.map("h", "E");
+api.map("l", "R");
 
 // Jump to tab by number (t1, t2, t3, etc.)
 for (let i = 1; i <= 9; i++) {

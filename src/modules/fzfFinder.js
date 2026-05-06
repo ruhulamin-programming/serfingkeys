@@ -1,7 +1,7 @@
 import Fuse from "fuse.js";
 
 const historyStore = [
-  "open https://github.com/shahjalal-labs",
+  "open https://github.com/ruhulamin-programming",
   "scroll down",
   "copy image url",
   "evaluate Surfingkeys UI",

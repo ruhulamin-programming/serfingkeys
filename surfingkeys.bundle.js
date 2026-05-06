@@ -1909,7 +1909,7 @@
 
   // src/modules/fzfFinder.js
   var historyStore = [
-    "open https://github.com/shahjalal-labs",
+    "open https://github.com/ruhulamin-programming",
     "scroll down",
     "copy image url",
     "evaluate Surfingkeys UI",
@@ -2141,7 +2141,8 @@
   var { mapkey: mapkey2, RUNTIME } = api;
   api.map("tj", "g0");
   api.map("tk", "g$");
-  api.map("th", "E");
+  api.map("h", "E");
+  api.map("l", "R");
   for (let i = 1; i <= 9; i++) {
     api.mapkey(`t${i}`, `\u{1F522} Jump to tab ${i}`, function() {
       api.RUNTIME(
